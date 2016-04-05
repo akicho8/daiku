@@ -1,23 +1,26 @@
 #+OPTIONS: toc:nil num:nil author:nil creator:nil \n:nil |:t
 #+OPTIONS: @:t ::t ^:t -:t f:t *:t <:t
 
-* マウスカーソルを合わせると画像をプレビューしたりするスクリプト
+* マウスオーバーで画像プレビューなどの便利汎用JS集
 
 ** 使い方
 
+*** application.js.coffee
 #+BEGIN_SRC Javascript
 =require daiku
 #+END_SRC
 
+*** application.css.sass
 #+BEGIN_SRC css
 =require daiku
 #+END_SRC
 
-#+BEGIN_SRC html
-<img src="rails.png" class="daiku_preview" />
+*** view
+#+BEGIN_SRC view
+= image_tag("rails.png", class: "daiku_preview")
 #+END_SRC
 
-** テスト方法
+** テスト方法(目視！)
 
 #+BEGIN_SRC sh
 cd test/dummy
