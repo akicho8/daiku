@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # helper :quick_table
-  # include QuickTableHelper
-  # helper QuickTable::Application.helpers
+  # helper :daiku
+  # include DaikuHelper
+  # helper Daiku::Application.helpers
 
-  # helper QuickTable::QuickTableHelper
-  # helper QuickTable::Engine.helpers
+  # helper Daiku::DaikuHelper
+  # helper Daiku::Engine.helpers
 end

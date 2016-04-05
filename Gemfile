@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Declare your gem's dependencies in quick_table2.gemspec.
+# Declare your gem's dependencies in daiku2.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
@@ -13,4 +13,9 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'jquery-rails'
+gem 'coffee-rails'
+gem 'coffee-views'
+gem 'sass-rails'
+gem 'slim-rails'
 gem 'twitter-bootstrap-rails'

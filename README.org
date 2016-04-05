@@ -1,38 +1,20 @@
 #+OPTIONS: toc:nil num:nil author:nil creator:nil \n:nil |:t
 #+OPTIONS: @:t ::t ^:t -:t f:t *:t <:t
 
-* Convert object to table html
+* マウスカーソルを合わせると画像をプレビューしたりするスクリプト
 
-** Examples
+** 使い方
 
-#+BEGIN_SRC ruby
-quick_table { {:a => 1, :b => 2} }
-# => [a][1]
-# => [b][2]
-
-quick_table { [{:a => 1, :b => 2}, {:a => 3, :b => 4}] }
-# => [a][b]
-# => [1][2]
-# => [3][4]
-
-quick_table { [[:a, :b], [ 1,  2], [ 3,  4]] }
-# => [a][b]
-# => [1][2]
-# => [3][4]
-
-quick_table { [:a, :b] }
-# => [a][b]
-
-quick_table { :a }
-# => [a]
+#+BEGIN_SRC Javascript
+=require daiku
 #+END_SRC
 
-** Options
+#+BEGIN_SRC css
+=require daiku
+#+END_SRC
 
-#+BEGIN_SRC ruby
-quick_table(:skip_header => false) { [{:a => 1, :b => 2}, {:a => 3, :b => 4}] }
-# => [1][2]
-# => [3][4]
+#+BEGIN_SRC html
+<img src="rails.png" class="daiku_preview" />
 #+END_SRC
 
 ** テスト方法

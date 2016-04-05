@@ -1,0 +1,14 @@
+div= "普通の使い方"
+= image_tag("box_b.jpg", :class => "daiku_preview")
+
+div= "元は小さくてもプレビューは原寸となる"
+= image_tag("box_b.jpg", :class => "daiku_preview", :width => 16)
+
+div= "元は画像でなくてもよい"
+= link_to("表示", image_path("box_b.jpg"), :class => "daiku_preview")
+
+div= "box_a に合わせて box_b を表示"
+= link_to(image_tag("box_a.jpg"), image_path("box_b.jpg"), :class => "daiku_preview")
+
+div= "box_a に合わせて box_b を表示し、リンク先は別"
+= link_to(image_tag("box_a.jpg"), root_path, :rel => image_path("box_b.jpg"), :class => "daiku_preview")

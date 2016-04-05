@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :quick_table do
+# task :daiku do
 #   # Task goes here
 # end
