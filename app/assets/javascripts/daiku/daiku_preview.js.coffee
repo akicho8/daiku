@@ -39,7 +39,7 @@ $.daiku_preview = (target, options = {}) ->
     fade_in_delay: 1000.0 / 60 * 15 # フェイドインしてくるときのスピード
     mousemove: true                 # マウスと連動して動かすか？
     offset_x: 20                    # マウスからの距離(X)
-    offset_y: -4                    # マウスからの距離(Y)
+    offset_y: 0                     # マウスからの距離(Y)
     float_dom_id: "daiku_preview_float_box" # 浮ぶDOMのid
     tooltip_disable: true           # title属性の内容がホバーして画像の上に乗ってしまうのを防ぐ？
 
@@ -47,10 +47,12 @@ $.daiku_preview = (target, options = {}) ->
 
   float_box = null
   save_title = null
+  img = null
 
   target.hover (e) ->
     # マウスが乗ったとき
     src = $(@).attr("rel") || $(@).attr("href") || $(@).attr("src")
+    # review_width = $(@).attr("review_width")
 
     if options.tooltip_disable
       save_title = $(@).attr("title")
@@ -63,6 +65,10 @@ $.daiku_preview = (target, options = {}) ->
       img.attr("width", options.width)
     if options.height
       img.attr("height", options.height)
+
+    # if review_width
+    #   img.css
+    #     "max-width": review_width
 
     # bodyの最後に埋め込む
     if false
@@ -78,7 +84,7 @@ $.daiku_preview = (target, options = {}) ->
     # マウスのよこに表示
     float_box.css
       left: e.pageX + options.offset_x
-      top:  e.pageY + options.offset_y
+      top:  e.pageY + options.offset_y - img.height() / 2
     .fadeIn(options.fade_in_delay)
   , ->
     # マウスが離れたら消去
@@ -91,7 +97,7 @@ $.daiku_preview = (target, options = {}) ->
     target.mousemove (e) ->
       float_box.css
         left: e.pageX + options.offset_x
-        top:  e.pageY + options.offset_y
+        top:  e.pageY + options.offset_y - img.height() / 2
 
 $.fn.daiku_preview = (options) ->
   $.daiku_preview($(@), options)

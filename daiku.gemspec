@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails"
+  s.add_dependency "compass-rails"
+
   # s.add_dependency "jquery-rails"
   # s.add_dependency "coffee-rails"
   # s.add_dependency "coffee-views"
